@@ -1,0 +1,22 @@
+{
+  "name": "rutezangada-pageheaderwidget",
+  "authors": [
+    "Anderson Norberto Santos (andersonhtm@hotmail.com)"
+  ],
+  "description": "Page header widget",
+  "main": "",
+  "keywords": [
+    "breadcrumb",
+    "pageheader",
+    "header"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

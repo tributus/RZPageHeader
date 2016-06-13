@@ -1,0 +1,19 @@
+{
+  "name": "rutezangada-pageheaderwidget",
+  "version": "0.1.0",
+  "description": "page header widget",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tributus/RZPageHeader.git"
+  },
+  "author": "Anderson Norberto Santos (andersonhtm@hotmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tributus/RZPageHeader/issues"
+  },
+  "homepage": "https://github.com/tributus/RZPageHeader#readme"
+}
