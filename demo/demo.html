@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageHeader - Demo</title>
+    <link media="all" rel="stylesheet" href="../bower_components/semantic/dist/semantic.min.css">
+    <link media="all" rel="stylesheet" href="../dist/PageHeaderWidget.min.css">
+</head>
+<body>
+<div id="header"></div>
+</body>
+<script type="text/javascript" src="../bower_components/RZClientEngine/dist/RZClientEngine-standalone.min.js"></script>
+<script type="text/javascript" src="../bower_components/semantic/dist/semantic.min.js"></script>
+<script type="text/javascript" src="../dist/PageHeaderWidget.js"></script>
+<script>
+
+    var params = {
+        pageTitle:"Título da página",
+        pageSubTitle:"Subtítulo",
+        breadCrumbData:[
+            {name:"home", url:"#"},
+            {name:"labs", url:"#"},
+            {name:"demo"}
+        ]
+    };
+
+    var widgetInstance = ruteZangada.renderWidget("rz-page-header", "header",params);
+</script>
+</html>
