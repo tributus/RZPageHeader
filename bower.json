@@ -22,6 +22,10 @@
     "src"
   ],
   "devDependencies": {
-    "RZClientEngine": "rutezangada-client-engine#^0.1.2"
+    "RZClientEngine": "rutezangada-client-engine#^0.1.2",
+    "semantic-ui-breadcrumb": "^2.1.7",
+    "semantic-ui-site": "^2.1.7",
+    "semantic-ui-reset": "^2.1.7",
+    "semantic-ui-header": "^2.1.7"
   }
 }
