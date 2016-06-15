@@ -30,3 +30,16 @@ Default parameters:
     }
 };
 ```
+
+operations:
+
+```
+PageHeadertInterface:[
+    "setTitle",
+    "getTitle",
+    "setSubtitle",
+    "getSubtitle",
+    "getBreadcrumbData",
+    "changeBreadcrumb"
+]
+```

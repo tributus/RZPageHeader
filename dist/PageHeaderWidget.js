@@ -3,7 +3,12 @@
  */
 rz.widgets.RZPageHeaderWidgetHelpers = {
     PageHeadertInterface:[
-
+        "setTitle",
+        "getTitle",
+        "setSubtitle",
+        "getSubtitle",
+        "getBreadcrumbData",
+        "changeBreadcrumb"
     ]
 };
 
@@ -17,8 +22,8 @@ rz.widgets.TableWidget = ruteZangada.widget("rz-page-header", rz.widgets.RZPageH
         var defaultParams = {
             elementID : elementID,
             pageTitle:"Page Title",
-            pageSubTitle:"This is the subtitle",
-            displaySubTitle:true,
+            pageSubtitle:"This is the subtitle",
+            displaySubtitle:true,
             displayBreadcrumb:true,
             breadCrumbData:[
                 {name:"home"}
@@ -38,9 +43,9 @@ rz.widgets.TableWidget = ruteZangada.widget("rz-page-header", rz.widgets.RZPageH
         var sb = new StringBuilder();
         $this.baseID = $this.params.elementID + "_pageheader";
         sb.appendFormat('<div id="{0}" class="{1} rzpageheader">',$this.baseID,$this.params.ui.widgetMainCssClass);
-        sb.appendFormat('    <h1 class="{1}">{0}</h1>',$this.params.pageTitle,$this.params.ui.innerClass);
-        if($this.params.displaySubTitle){
-            sb.appendFormat('    <small>{0}</small>',$this.params.pageSubTitle);
+        sb.appendFormat('    <h1 id="{2}_title" class="{1}">{0}</h1>',$this.params.pageTitle,$this.params.ui.innerClass,$this.baseID);
+        if($this.params.displaySubtitle){
+            sb.appendFormat('    <small id="{1}_subtitle">{0}</small>',$this.params.pageSubtitle,$this.baseID);
         }
         renderBreadcrumb(sb);
         sb.appendFormat('</div>');
@@ -48,8 +53,13 @@ rz.widgets.TableWidget = ruteZangada.widget("rz-page-header", rz.widgets.RZPageH
     };
     
     var renderBreadcrumb = function(sb){
+        var isUpdating =  false;
+        if(sb===undefined){
+            isUpdating = true;
+            sb = new StringBuilder();
+        }
         if($this.params.displayBreadcrumb && $this.params.breadCrumbData !==undefined && $this.params.breadCrumbData.length > 0){
-            sb.appendFormat('<div class="ui breadcrumb {0}">',$this.params.ui.breadcrumbAdditionalCSSClass);
+            sb.appendFormat('<div id="{1}_bc" class="ui breadcrumb {0}">',$this.params.ui.breadcrumbAdditionalCSSClass,$this.baseID);
             var length = $this.params.breadCrumbData.length;
             var current = 0;
             $this.params.breadCrumbData.forEach(function(item){
@@ -64,7 +74,38 @@ rz.widgets.TableWidget = ruteZangada.widget("rz-page-header", rz.widgets.RZPageH
                 }
             });
             sb.appendFormat('</div>');
+            if(isUpdating){
+                var id = "#*_bc".replace("*",$this.baseID);
+                $(id).replaceWith(sb.toString());
+            }
         }
-    }
+    };
+
+    this.setTitle = function(t){
+        $this.params.pageTitle = t;
+        $("#" + $this.baseID + "_title").text(t);
+    };
     
+    this.getTitle = function(){
+        return $this.params.pageTitle;
+    };
+
+    this.setSubtitle = function(t){
+        $this.params.pageSubtitle = t;
+        $("#" + $this.baseID + "_subtitle").text(t);
+    };
+
+    this.getSubtitle = function(){
+        return $this.params.pageSubtitle;
+    };
+
+    this.getBreadcrumbData = function(){
+        return $this.params.breadCrumbData;
+    };
+
+    this.changeBreadcrumb = function(data){
+        $this.params.breadCrumbData = data;
+        renderBreadcrumb();
+    };
+
 });

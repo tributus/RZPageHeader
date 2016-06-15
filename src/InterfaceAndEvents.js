@@ -3,6 +3,11 @@
  */
 rz.widgets.RZPageHeaderWidgetHelpers = {
     PageHeadertInterface:[
-
+        "setTitle",
+        "getTitle",
+        "setSubtitle",
+        "getSubtitle",
+        "getBreadcrumbData",
+        "changeBreadcrumb"
     ]
 };
