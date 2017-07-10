@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tributus/RZPageHeader/issues"
   },
-  "homepage": "https://github.com/tributus/RZPageHeader#readme"
+  "homepage": "https://github.com/tributus/RZPageHeader#readme",
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0"
+  }
 }

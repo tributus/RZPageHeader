@@ -1,0 +1,24 @@
+{
+  "version":"0.1.0",
+  "name":"RZPageHeaderWidget",
+  "description":"Page Header Widget",
+  "icons":{
+    "small":"rzpageheader-small.png",
+    "normal":"rzpageheader-normal.png",
+    "large":"rzpageheader-large.png"
+  },
+  "developer":{
+    "name":"Anderson Norberto Santos",
+    "url":"https://github.com/tributus"
+  },
+  "categories":["toolbars","actionbars","navigation","views","Layout"],
+  "dependencies":[
+      {"name":"rutezangada-clientengine.js", "version":"0.8.0"},
+      {"name":"semantic-ui-site/site.js","version":"2.1.7"},
+      {"name":"semantic-ui-reset/reset.css", "version":"2.1.7"},
+      {"name":"semantic-ui-site/site.css", "version":"2.1.7"},
+      {"name":"semantic-ui-header/header.css","version":"2.1.7"},
+      {"name":"semantic-ui-breadcrumb/breadcrumb.css","version":"2.1.7"},
+      {"name":"RZPageHeaderWidget.css", "version":"0.1.0"}
+  ]
+}

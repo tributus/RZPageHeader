@@ -43,6 +43,12 @@ module.exports = function (grunt) {
                         'dist/PageHeaderWidget.min.css': 'src/style/style.less'
                     }
                 }
+            },
+            copy:{
+                manifest:{
+                    src: 'manifest.json',
+                    dest: 'dist/manifest.json'
+                }
             }
         }
     );
@@ -50,6 +56,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.registerTask('default', ['concat', 'uglify','less']);
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.registerTask('default', ['concat', 'uglify','less','copy']);
 
 };
