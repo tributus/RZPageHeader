@@ -16,7 +16,7 @@ Default parameters:
 {
     elementID : elementID,
     pageTitle:"Page Title",
-    pageSubTitle:"This is the subtitle",
+    pageSubtitle:"This is the subtitle",
     displaySubTitle:true,
     displayBreadcrumb:true,
     breadCrumbData:[
